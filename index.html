@@ -5,16 +5,16 @@
 
 	#A{
 		border:solid 1px black;
-		width:250px;
+		width:200px;
 	}
 	#B{
 		border:solid 1px black;
-		width:250px;
+		width:200px;
 	}
 
 	#photo{
-		height:100px;
-		width:100px;
+		height:50px;
+		width:50px;
 		background:#D0D0D0;
 		border-top-left-radius:25px;
 		border-bottom-right-radius:25px;
@@ -44,7 +44,7 @@
 				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				//encodingType:JPEG,
-				destinationType:CAMERA 	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				//destinationType:CAMERA 	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}		
 			navigator.camera.getPicture(onSuccess,onFail,option);
 		}
@@ -57,7 +57,7 @@
 				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				//encodingType:JPEG,
-				pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				//pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}
 			navigator.camera.getPicture(onSuccess, onFail, option2);
 		}
@@ -86,7 +86,7 @@ this was a test<br>
 <td>
 
 <input type="button" value="Take selfie" onclick="initCamera()"/><br><br>
-<input type="button" value="Upload selfie" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM)"/>
+<input type="button" value="Upload selfie" onclick="getPhoto()"/>
 </td>
 </tr>
 </table>
