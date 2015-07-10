@@ -32,35 +32,32 @@
 		function pageLoaded()
 		{
 			document.addEventListener("deviceready",phoneReady,false);
-			
 		}
-		
-		
 		function phoneReady(){
-			var pictureSource=navigator.camera.PictureSourceType;
-			var destinationType=navigator.camera.DestinationType;
+
 		}
 		//camera navigator ==============================================================================
 		function initCamera(){
 			var option = {
-				quality:80,
-				destinationType:Camera.DestinationType.FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
-				allowEdit:true;
-				encodingType:JPEG,
-				sourceType:CAMERA //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				quality:80
+				//destinationType:Camera.DestinationType.FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
+				//allowEdit:true;
+				//encodingType:JPEG,
+				//sourceType:CAMERA //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}	
 			navigator.camera.getPicture(onSuccess,onFail,option);
 		}
 
 		//================================================================================================
+		
 		//Album navigator ================================================================================
-		function getPhoto(source){
+		function getPhoto(){
 			var option2 = {
 				quality:80,
-				destinationType: Camera.DestinationType.DATA_URL,	//FILE_URI , NATIVE_URI ,DATA_URL
+				//destinationType: Camera.DestinationType.DATA_URL,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
-				encodingType:JPEG,
-				pictureSourceType:source	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				//encodingType:JPEG,
+				pictureSourceType:SAVEDPHOTOALBUM	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}
 			navigator.camera.getPicture(onSuccess, onFail,option2);
 		}
@@ -89,7 +86,7 @@ this was a test<br>
 <td>
 
 <input type="button" value="Take selfie" onclick="initCamera()"/><br><br>
-<input type="button" value="Upload selfie" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM)"/>
+<input type="button" value="Upload selfie" onclick="getPhoto()"/>
 </td>
 </tr>
 </table>
