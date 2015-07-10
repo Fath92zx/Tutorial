@@ -5,11 +5,11 @@
 
 	#A{
 		border:solid 1px black;
-		width:200px;
+		width:230px;
 	}
 	#B{
 		border:solid 1px black;
-		width:200px;
+		width:230px;
 	}
 
 	#photo{
@@ -39,30 +39,27 @@
 		function phoneReady(){}
 		//camera navigator ==============================================================================
 		function initCamera(){
-			/*var option = {
+			var option = {
 				quality:80,
-				destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
-				//allowEdit:true;
+				destinationType:Camera.DestinationType.FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
+				allowEdit:true;
 				encodingType:JPEG,
 				sourceType:CAMERA ,	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
-			}	*/	
-			navigator.camera.getPicture(onSuccess,onFail,{ quality: 50,
-															destinationType: destinationType.DATA_URL });
+			}	
+			navigator.camera.getPicture(onSuccess,onFail,option);
 		}
 
 		//================================================================================================
 		//Album navigator ================================================================================
 		function getPhoto(){
-			/*var option2 = {
+			var option2 = {
 				quality:80,
-				destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
+				destinationType: Camera.DestinationType.DATA_URL,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				encodingType:JPEG,
-				pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
-			}*/
-			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-															destinationType: destinationType.FILE_URI,
-															sourceType: pictureSource.SAVEDPHOTOALBUM });
+				pictureSourceType:Camera.PictureSource.SAVEDPHOTOALBUM	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+			}
+			navigator.camera.getPicture(onSuccess, onFail,option2);
 		}
 		function onSuccess(imageURL){//when camera connection success
 			//document.getElementById("pic").src = "data:image/jpeg;base64," + imageURL;
@@ -81,7 +78,7 @@
 this was a test<br>
 <p id="msg"></p>
 
-<form action="">
+<form action="#">
 <div id="A">
 <table>
 <tr>
@@ -99,7 +96,7 @@ this was a test<br>
 <tr>
 <td><br>Name<br></td><td><br>:<br></td><td><br><input type="text" /><br></td>
 </tr><tr>
-<td><br>Email<br></td><td><br>:<br></td><td><br><input type="text" /><br></td>
+<td><br>Email<br></td><td><br>:<br></td><td><br><input type="email" pattern="^\w+([\.\-]\w+)*\@\w+([\.\-]\w+)*\.[a-zA-Z]{2,11}$" placeholder="e-mail" /><br></td>
 </tr><tr>
 <td><br><br></td><td><br><br></td><td><br><input type="button" value="Register"/><br></td>
 </tr>
