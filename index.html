@@ -44,7 +44,7 @@
 				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				//encodingType:JPEG,
-				//destinationType:CAMERA 	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				sourceType:CAMERA 	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}		
 			navigator.camera.getPicture(onSuccess,onFail,option);
 		}
@@ -57,7 +57,7 @@
 				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				//encodingType:JPEG,
-				//pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}
 			navigator.camera.getPicture(onSuccess, onFail, option2);
 		}
