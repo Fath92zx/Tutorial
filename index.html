@@ -39,27 +39,30 @@
 		function phoneReady(){}
 		//camera navigator ==============================================================================
 		function initCamera(){
-			var option = {
+			/*var option = {
 				quality:80,
 				destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				encodingType:JPEG,
 				sourceType:CAMERA ,	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
-			}		
-			navigator.camera.getPicture(onSuccess,onFail,option);
+			}	*/	
+			navigator.camera.getPicture(onSuccess,onFail,{ quality: 50,
+															destinationType: destinationType.DATA_URL });
 		}
 
 		//================================================================================================
 		//Album navigator ================================================================================
 		function getPhoto(){
-			var option2 = {
+			/*var option2 = {
 				quality:80,
 				destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				encodingType:JPEG,
 				pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
-			}
-			navigator.camera.getPicture(onSuccess, onFail, option2);
+			}*/
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+															destinationType: destinationType.FILE_URI,
+															sourceType: pictureSource.SAVEDPHOTOALBUM });
 		}
 		function onSuccess(imageURL){//when camera connection success
 			//document.getElementById("pic").src = "data:image/jpeg;base64," + imageURL;
