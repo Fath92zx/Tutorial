@@ -41,10 +41,10 @@
 		function initCamera(){
 			var option = {
 				quality:80,
-				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
+				destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
-				//encodingType:JPEG,
-				//sourceType:CAMERA 	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				encodingType:JPEG,
+				sourceType:CAMERA ,	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}		
 			navigator.camera.getPicture(onSuccess,onFail,option);
 		}
@@ -54,9 +54,9 @@
 		function getPhoto(){
 			var option2 = {
 				quality:80,
-				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
+				destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
-				//encodingType:JPEG,
+				encodingType:JPEG,
 				pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}
 			navigator.camera.getPicture(onSuccess, onFail, option2);
