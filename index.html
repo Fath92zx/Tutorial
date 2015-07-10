@@ -5,16 +5,16 @@
 
 	#A{
 		border:solid 1px black;
-		width:400px;
+		width:250px;
 	}
 	#B{
 		border:solid 1px black;
-		width:400px;
+		width:250px;
 	}
 
 	#photo{
-		height:200px;
-		width:200px;
+		height:100px;
+		width:100px;
 		background:#D0D0D0;
 		border-top-left-radius:25px;
 		border-bottom-right-radius:25px;
@@ -44,20 +44,20 @@
 				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				//encodingType:JPEG,
-				destinationType: destinationType.DATA_URL	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				destinationType:CAMERA 	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}		
 			navigator.camera.getPicture(onSuccess,onFail,option);
 		}
 
 		//================================================================================================
 		//Album navigator ================================================================================
-		function getPhoto(source){
+		function getPhoto(){
 			var option2 = {
 				quality:80,
 				//destinationType:FILE_URI,	//FILE_URI , NATIVE_URI ,DATA_URL
 				//allowEdit:true;
 				//encodingType:JPEG,
-				pictureSourceType:source	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
+				pictureSourceType:PHOTOLIBRARY	//PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM :byDefault CAMERA		
 			}
 			navigator.camera.getPicture(onSuccess, onFail, option2);
 		}
@@ -82,11 +82,11 @@ this was a test<br>
 <div id="A">
 <table>
 <tr>
-<td><div id="photo"><img src="" id="pic" height="200" /></img></div></td>
+<td><div id="photo"><img src="" id="pic" height="50" /></img></div></td>
 <td>
 
-<input type="button" value="Take a selfie" onclick="initCamera()"/><br><br>
-<input type="button" value="Upload selfie File" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM)"/>
+<input type="button" value="Take selfie" onclick="initCamera()"/><br><br>
+<input type="button" value="Upload selfie" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM)"/>
 </td>
 </tr>
 </table>
